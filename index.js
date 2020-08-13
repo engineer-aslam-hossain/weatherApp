@@ -18,7 +18,6 @@ const isDayTime = icon => {
 };
 
 const updateWeatherApp = city => {
-    console.log(city);
     const imgIcon = city.weather[0].icon;
     const imgSrc = `https://openweathermap.org/img/wn/${imgIcon}@2x.png`;
     cityName.textContent = city.name;
@@ -49,12 +48,10 @@ const updateWeatherApp = city => {
 </div>`;
 
     if (isDayTime(imgIcon)) {
-        console.log("day");
         timeImg.setAttribute("src", "img/day_image.svg");
         cityName.classList.remove("text-white");
         cityName.classList.add("text-black");
     } else {
-        console.log("night");
         timeImg.setAttribute("src", "img/night_image.svg");
         cityName.classList.add("text-white");
     }
